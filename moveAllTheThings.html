@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="public/stylesheet.css ">
+  <script>
+    var fooUp = null; 
+    var fooRight = null; 
+    var fooLeft = null; 
+   
+    function doMoveRight() {  
+      fooRight.style.left = parseInt(fooRight.style.left)+1+'px';  
+      setTimeout(doMoveRight,20); 
+    }
+
+    function doMoveLeft() {  
+      fooLeft.style.right = parseInt(fooLeft.style.right)+1+'px';  
+      setTimeout(doMoveLeft,20); 
+    }
+
+    function doMoveUp() {  
+      fooUp.style.bottom = parseInt(fooUp.style.bottom)+1+'px';  
+      setTimeout(doMoveUp,20); 
+    }
+    
+    function init() {  
+      fooUp = document.getElementById('fooUp'); 
+      fooRight = document.getElementById('fooRight'); 
+      fooLeft = document.getElementById('fooLeft');  
+      fooUp.style.bottom = '0px';
+      fooRight.style.left = '0px';
+      fooLeft.style.right = '0px';   
+      doMoveRight(); // start animating
+      doMoveLeft();
+      doMoveUp();
+    }
+
+    window.onload = init;
+  </script>
+</head>
+  <body>
+        <div id="fooUp" class="example_block">Foo</div>
+        <div id="fooRight" class="example_block">Foo</div>
+        <div id="fooLeft" class="example_block">Foo</div>
+  </body>
+</html>

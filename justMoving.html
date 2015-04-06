@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<body onload="doMove()">
+<head>
+  <link type="text/css" rel="stylesheet" href="public/stylesheet.css ">
+  <script>
+    var foo = null; 
+   
+    function doMove() {  
+      foo.style.left = parseInt(foo.style.left)+1+'px';  
+      setTimeout(doMove,20); 
+    }
+    
+    function init() {  
+      foo = document.getElementById('foo');  
+      foo.style.left = '0px';   
+      doMove(); // start animating
+    }
+
+    window.onload = init;
+  </script>
+</head>
+  <body>
+        <div id="foo" class="example_block">Foo</div>
+  </body>
+</html>
